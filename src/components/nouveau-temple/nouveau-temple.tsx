@@ -69,7 +69,7 @@ export default function NewTemplePage() {
       title: "Érection de la structure",
       status: "Terminé",
       date: "Oct - Déc 2022",
-      description: "Construction de l'ossature principale et de la charpente."
+      description: "Construction de l&apos;ossature principale et de la charpente."
     },
     {
       step: 5,
@@ -133,7 +133,7 @@ export default function NewTemplePage() {
     <>
       <Head>
         <title>Nouveau Temple - Jesosy Mamonjy Iarintsena</title>
-        <meta name="description" content="Suivez l'avancement de la construction du nouveau temple de Jesosy Mamonjy Iarintsena et soutenez ce projet de foi." />
+        <meta name="description" content="Suivez l&apos;avancement de la construction du nouveau temple de Jesosy Mamonjy Iarintsena et soutenez ce projet de foi." />
       </Head>
 
       {/* Hero Section */}
@@ -362,55 +362,150 @@ export default function NewTemplePage() {
             </div>
             <h3 className="font-semibold text-lg text-blue-800">Pour les ouvriers</h3>
           </div>
-          <p className="text-gray-700">Protection, force et sagesse pour tous ceux qui travaillent sur le chantier. Que Dieu les garde de tout accident et leur donne de la joie dans leur travail.</p>
-        </div>
-        
-        {/* Deuxième carte */}
-        <div className="bg-white p-6 rounded-lg shadow-sm transition-transform duration-300 hover:transform hover:-translate-y-1 hover:shadow-md">
-          <div className="flex items-center mb-4">
-            <div className="bg-blue-100 p-3 rounded-full mr-4">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-              </svg>
+                        <p>Protection, sagesse et force pour tous les travailleurs sur le chantier.</p>
             </div>
-            <h3 className="font-semibold text-lg text-blue-800">Pour le projet</h3>
-          </div>
-          <p className="text-gray-700">Que chaque étape de construction se déroule selon les plans et dans les délais. Pour des ressources suffisantes et une gestion sage du budget alloué.</p>
-        </div>
-        
-        {/* Troisième carte */}
-        <div className="bg-white p-6 rounded-lg shadow-sm transition-transform duration-300 hover:transform hover:-translate-y-1 hover:shadow-md">
-          <div className="flex items-center mb-4">
-            <div className="bg-blue-100 p-3 rounded-full mr-4">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-              </svg>
+            <div className="bg-white p-6 rounded-lg shadow-sm">
+              <h3 className="font-semibold mb-3 text-blue-800">Pour les finances</h3>
+              <p>Que Dieu pourvoie à tous nos besoins selon sa richesse.</p>
             </div>
-            <h3 className="font-semibold text-lg text-blue-800">Pour la communauté</h3>
+            <div className="bg-white p-6 rounded-lg shadow-sm">
+              <h3 className="font-semibold mb-3 text-blue-800">Pour la communauté</h3>
+              <p>Unité et vision commune dans l&apos;avancement de ce projet.</p>
+            </div>
           </div>
-          <p className="text-gray-700">Que ce lieu devienne un espace de bénédiction pour tous ceux qui le fréquenteront. Pour l&apos;unité et la coopération entre tous les membres impliqués.</p>
-        </div>
+        </section>
+
+        {/* Timeline Section */}
+        <section className="my-16">
+          <h2 className="text-3xl md:text-4xl font-serif text-center text-green-800 mb-12">Chronologie du Projet</h2>
+          
+          <div className="relative">
+            {/* Ligne verticale */}
+            <div className="absolute left-4 md:left-1/2 h-full w-1 bg-green-200 transform -translate-x-1/2"></div>
+            
+            {/* Éléments de la timeline */}
+            <div className="space-y-12">
+              {constructionTimeline.map((item, index) => (
+                <div key={item.step} className={`relative flex flex-col md:flex-row ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
+                  {/* Point sur la ligne */}
+                  <div className="absolute left-4 md:left-1/2 h-6 w-6 bg-green-600 rounded-full transform -translate-x-1/2 z-10"></div>
+                  
+                  {/* Contenu */}
+                  <div className={`md:w-1/2 ${index % 2 === 0 ? 'md:pl-8 md:pr-4 md:text-left' : 'md:pr-8 md:pl-4 md:text-right'} ml-12 md:ml-0 mt-2`}>
+                    <div className="bg-white p-6 rounded-lg shadow-md">
+                      <div className="flex justify-between items-start mb-2">
+                        <h3 className="text-xl font-semibold text-green-800">{item.title}</h3>
+                        <span className={`px-3 py-1 rounded-full text-sm font-medium ${
+                          item.status === "Terminé" ? "bg-green-100 text-green-800" :
+                          item.status === "En cours" ? "bg-blue-100 text-blue-800" :
+                          "bg-gray-100 text-gray-800"
+                        }`}>
+                          {item.status}
+                        </span>
+                      </div>
+                      <p className="text-gray-600 mb-2">{item.date}</p>
+                      <p className="text-gray-700">{item.description}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="my-16">
+          <h2 className="text-3xl md:text-4xl font-serif text-center text-green-800 mb-12">Questions Fréquentes</h2>
+          
+          <div className="max-w-3xl mx-auto space-y-6">
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-2 text-green-800">Quelle est la capacité du nouveau temple?</h3>
+              <p className="text-gray-700">Le nouveau temple pourra accueillir jusqu&apos;à 500 fidèles, avec des espaces supplémentaires pour les classes d&apos;école du dimanche et les réunions de groupes.</p>
+            </div>
+            
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-2 text-green-800">Où se situe le nouveau bâtiment?</h3>
+              <p className="text-gray-700">Le nouveau temple est construit à proximité de notre lieu actuel, au 123 Avenue de la Foi, Iarintsena, pour un meilleur accès et plus de visibilité.</p>
+            </div>
+            
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-2 text-green-800">Comment puis-je contribuer au projet?</h3>
+              <p className="text-gray-700">Vous pouvez contribuer par des dons financiers, du bénévolat sur le chantier (selon les compétences), ou en participant à nos événements de collecte de fonds. Toute aide est la bienvenue!</p>
+            </div>
+            
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-2 text-green-800">Quand est prévue l&apos;inauguration?</h3>
+              <p className="text-gray-700">l&apos;inauguration officielle est prévue pour février 2024, sous réserve de l&apos;avancement des travaux et des conditions météorologiques.</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Final CTA Section */}
+        <section className="bg-gradient-to-r from-green-700 to-green-900 text-white p-12 rounded-lg text-center my-16">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">Rejoignez-nous dans cette Aventure de Foi</h2>
+          <p className="text-xl mb-8 max-w-3xl mx-auto">
+            Que vous soyez membre de notre communauté depuis longtemps ou nouveau venu, 
+            votre soutien est précieux pour l&apos;achèvement de ce projet historique.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/get-involved" className="bg-white text-green-800 hover:bg-gray-100 px-8 py-3 rounded-full font-semibold transition-colors duration-300">
+              M&apos;impliquer
+            </Link>
+            <Link href="/visit" className="border-2 border-white text-white hover:bg-white hover:bg-opacity-10 px-8 py-3 rounded-full font-semibold transition-colors duration-300">
+              Visiter le chantier
+            </Link>
+            <Link href="/prayer" className="border-2 border-white text-white hover:bg-white hover:bg-opacity-10 px-8 py-3 rounded-full font-semibold transition-colors duration-300">
+              Groupe de prière
+            </Link>
+          </div>
+        </section>
       </div>
-      
-      <div className="mt-10 bg-blue-100 p-6 rounded-lg max-w-2xl mx-auto">
-        <h3 className="font-semibold text-xl mb-3 text-blue-800">Rejoignez notre chaîne de prière</h3>
-        <p className="text-gray-700 mb-4">Inscrivez-vous pour recevoir nos intentions de prière mensuelles par email</p>
-        <form className="flex flex-col sm:flex-row gap-2 justify-center">
-          <input 
-            type="email" 
-            placeholder="Votre adresse email" 
-            className="px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300 flex-grow max-w-md"
-          />
-          <button 
-            type="submit" 
-            className="bg-blue-700 text-white px-6 py-2 rounded-lg hover:bg-blue-800 transition-colors"
-          >
-            S&apos;inscrire
-          </button>
-        </form>
-      </div>
-    </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-800 text-white py-12">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+              <h3 className="text-xl font-serif font-bold mb-4">Jesosy Mamonjy Iarintsena</h3>
+              <p className="mb-4">Une communauté de foi au service de Christ et des personnes.</p>
+              <p>123 Avenue de la Foi<br />Iarintsena, Madagascar</p>
+            </div>
+            
+            <div>
+              <h3 className="text-xl font-semibold mb-4">Liens Rapides</h3>
+              <ul className="space-y-2">
+                <li><Link href="/about" className="hover:text-green-300">À propos</Link></li>
+                <li><Link href="/ministries" className="hover:text-green-300">Ministères</Link></li>
+                <li><Link href="/events" className="hover:text-green-300">Événements</Link></li>
+                <li><Link href="/contact" className="hover:text-green-300">Contact</Link></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h3 className="text-xl font-semibold mb-4">Restons Connectés</h3>
+              <p className="mb-4">Inscrivez-vous à notre newsletter pour suivre l&apos;avancement du projet.</p>
+              <div className="flex space-x-4">
+                <a href="#" className="bg-green-700 hover:bg-green-600 h-10 w-10 rounded-full flex items-center justify-center">
+                  <span className="sr-only">Facebook</span>
+                  {/* Icône Facebook */}
+                </a>
+                <a href="#" className="bg-green-700 hover:bg-green-600 h-10 w-10 rounded-full flex items-center justify-center">
+                  <span className="sr-only">Instagram</span>
+                  {/* Icône Instagram */}
+                </a>
+                <a href="#" className="bg-green-700 hover:bg-green-600 h-10 w-10 rounded-full flex items-center justify-center">
+                  <span className="sr-only">YouTube</span>
+                  {/* Icône YouTube */}
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <div className="border-t border-gray-700 mt-8 pt-8 text-center">
+            <p>© {new Date().getFullYear()} Jesosy Mamonjy Iarintsena. Tous droits réservés.</p>
+          </div>
         </div>
+      </footer>
     </>
   );
 }
