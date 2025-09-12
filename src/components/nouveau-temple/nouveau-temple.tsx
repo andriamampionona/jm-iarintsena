@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 
 import Head from 'next/head';
 import Link from 'next/link';
+import ChurchFooter from '../ChurchFooter';
 
 export default function NewTemplePage() {
   const [constructionProgress, setConstructionProgress] = useState(75);
@@ -425,7 +426,7 @@ export default function NewTemplePage() {
             
             <div className="bg-white p-6 rounded-lg shadow-md">
               <h3 className="text-xl font-semibold mb-2 text-green-800">Où se situe le nouveau bâtiment?</h3>
-              <p className="text-gray-700">Le nouveau temple est construit à proximité de notre lieu actuel, au 123 Avenue de la Foi, Iarintsena, pour un meilleur accès et plus de visibilité.</p>
+              <p className="text-gray-700">Le nouveau temple est construit à proximité de notre lieu actuel, au RN7 Iarintsena, Ambalavao<br /> Fianarantsoa,  Madagascar, pour un meilleur accès et plus de visibilité.</p>
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-md">
@@ -451,61 +452,18 @@ export default function NewTemplePage() {
             <Link href="/get-involved" className="bg-white text-green-800 hover:bg-gray-100 px-8 py-3 rounded-full font-semibold transition-colors duration-300">
               M&apos;impliquer
             </Link>
-            <Link href="/visit" className="border-2 border-white text-white hover:bg-white hover:bg-opacity-10 px-8 py-3 rounded-full font-semibold transition-colors duration-300">
+            <Link href="/visit" className="border-2 hover:text-green-800 border-white text-white hover:bg-white hover:bg-opacity-10 px-8 py-3 rounded-full font-semibold transition-colors duration-300">
               Visiter le chantier
             </Link>
-            <Link href="/prayer" className="border-2 border-white text-white hover:bg-white hover:bg-opacity-10 px-8 py-3 rounded-full font-semibold transition-colors duration-300">
+            <Link href="/prayer" className="border-2 hover:text-green-800 border-white text-white hover:bg-white hover:bg-opacity-10 px-8 py-3 rounded-full font-semibold transition-colors duration-300">
               Groupe de prière
             </Link>
           </div>
         </section>
       </div>
 
-      {/* Footer */}
-      <footer className="bg-gray-800 text-white py-12">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-              <h3 className="text-xl font-serif font-bold mb-4">Jesosy Mamonjy Iarintsena</h3>
-              <p className="mb-4">Une communauté de foi au service de Christ et des personnes.</p>
-              <p>123 Avenue de la Foi<br />Iarintsena, Madagascar</p>
-            </div>
-            
-            <div>
-              <h3 className="text-xl font-semibold mb-4">Liens Rapides</h3>
-              <ul className="space-y-2">
-                <li><Link href="/about" className="hover:text-green-300">À propos</Link></li>
-                <li><Link href="/ministries" className="hover:text-green-300">Ministères</Link></li>
-                <li><Link href="/events" className="hover:text-green-300">Événements</Link></li>
-                <li><Link href="/contact" className="hover:text-green-300">Contact</Link></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="text-xl font-semibold mb-4">Restons Connectés</h3>
-              <p className="mb-4">Inscrivez-vous à notre newsletter pour suivre l&apos;avancement du projet.</p>
-              <div className="flex space-x-4">
-                <a href="#" className="bg-green-700 hover:bg-green-600 h-10 w-10 rounded-full flex items-center justify-center">
-                  <span className="sr-only">Facebook</span>
-                  {/* Icône Facebook */}
-                </a>
-                <a href="#" className="bg-green-700 hover:bg-green-600 h-10 w-10 rounded-full flex items-center justify-center">
-                  <span className="sr-only">Instagram</span>
-                  {/* Icône Instagram */}
-                </a>
-                <a href="#" className="bg-green-700 hover:bg-green-600 h-10 w-10 rounded-full flex items-center justify-center">
-                  <span className="sr-only">YouTube</span>
-                  {/* Icône YouTube */}
-                </a>
-              </div>
-            </div>
-          </div>
-          
-          <div className="border-t border-gray-700 mt-8 pt-8 text-center">
-            <p>© {new Date().getFullYear()} Jesosy Mamonjy Iarintsena. Tous droits réservés.</p>
-          </div>
-        </div>
-      </footer>
+        {/* Footer */}
+        <ChurchFooter/>
     </>
   );
 }

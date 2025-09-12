@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import ChurchFooter from '../ChurchFooter';
 
 export default function ChurchHomePage() {
   const [constructionProgress, setConstructionProgress] = useState(75);
@@ -29,7 +30,7 @@ export default function ChurchHomePage() {
             <Link href="/new-temple" className="bg-green-700 hover:bg-green-800 text-white px-6 py-3 rounded-full transition-all duration-300 transform hover:-translate-y-1">
               Projet du Temple
             </Link>
-            <Link href="/services" className="border-2 border-white text-white hover:bg-white hover:bg-opacity-10 px-6 py-3 rounded-full transition-all duration-300">
+            <Link href="/ministries" className="border-2 border-white text-white hover:bg-white hover:bg-opacity-10 hover:text-green-800 px-6 py-3 rounded-full transition-all duration-300">
               Nos Activités
             </Link>
           </div>
@@ -49,7 +50,7 @@ export default function ChurchHomePage() {
           <div className="flex flex-col md:flex-row items-center gap-10">
             <div className="md:w-1/2">
               <p className="text-lg mb-6">
-                Bienvenue à l&apos;église Jesosy Mamonjy (Jésus Sauveur) d&apos;Iarintsena. Nous sommes une communauté de foi, d&apos;espérance et d&apos;amour, rassemblée autour de la parole de Dieu et de l&apos;enseignement de Jésus-Christ.
+                Bienvenue à l&apos;église Jesosy Mamonjy (Jésus Sauveur) d&apos;Iarintsena. Nous sommes une communauté de foi, d&apos;espérance et d&apos;amour, rassemblée autour de la parole de Dieu et de l&apos; enseignement de Jésus-Christ.
               </p>
               <p className="text-lg mb-6">
                 Fondée sur des valeurs chrétiennes solides, notre église se consacre à servir la communauté et à répandre l&apos;amour de Dieu à travers des actions concrètes et un accompagnement spirituel.
@@ -185,12 +186,14 @@ export default function ChurchHomePage() {
             <Link href="/events" className="bg-white text-green-800 hover:bg-gray-100 px-8 py-3 rounded-full font-semibold transition-colors duration-300">
               Voir le programme
             </Link>
-            <Link href="/donate" className="border-2 border-white text-white hover:bg-white hover:bg-opacity-10 px-8 py-3 rounded-full font-semibold transition-colors duration-300">
+            <Link href="/donate" className="border-2 hover:text-green-800 border-white text-white hover:bg-white hover:bg-opacity-10 px-8 py-3 rounded-full font-semibold transition-colors duration-300">
               Soutenir le projet
             </Link>
           </div>
         </div>
       </section>
+      
+        <ChurchFooter/>
     </>
   );
 }

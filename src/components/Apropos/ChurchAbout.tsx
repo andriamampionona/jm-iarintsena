@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
+import ChurchFooter from '../ChurchFooter';
 
 export default function ChurchAboutPage() {
   const [isVisible, setIsVisible] = useState(false);
@@ -15,7 +16,7 @@ export default function ChurchAboutPage() {
   const timelineData = [
     {
       year: "1995",
-      title: "Fondation de l&apos;Église",
+      title: "Fondation de l'Église",
       description: "Un petit groupe de croyants commence à se réunir dans une maison privée à Iarintsena."
     },
     {
@@ -76,7 +77,7 @@ export default function ChurchAboutPage() {
     },
     {
       icon: "📖",
-      title: "l&apos;Enseignement",
+      title: "l'Enseignement",
       description: "Nous nous appuyons sur l&apos;étude approfondie de la Parole de Dieu."
     },
     {
@@ -204,7 +205,7 @@ export default function ChurchAboutPage() {
               <ul className="list-disc list-inside space-y-2 text-lg">
                 <li>Adorer Dieu en esprit et en vérité</li>
                 <li>Évangéliser et partager la bonne nouvelle du salut</li>
-                <li>Édifier les croyants par l&apos;enseignement de la Parole</li>
+                <li>Édifier les croyants par l&apos; enseignement de la Parole</li>
                 <li>Servir notre communauté avec compassion</li>
               </ul>
             </div>
@@ -246,12 +247,14 @@ export default function ChurchAboutPage() {
             <Link href="/services" className="bg-white text-green-800 hover:bg-gray-100 px-6 py-3 rounded-full font-semibold transition-colors duration-300">
               Nos Horaires
             </Link>
-            <Link href="/contact" className="border-2 border-white text-white hover:bg-white hover:bg-opacity-10 px-6 py-3 rounded-full font-semibold transition-colors duration-300">
+            <Link href="/contact" className="border-2 hover:text-green-800 border-white text-white hover:bg-white hover:bg-opacity-10 px-6 py-3 rounded-full font-semibold transition-colors duration-300">
               Nous Contacter
             </Link>
           </div>
         </section>
       </div>
+      
+        <ChurchFooter />
     </>
   );
 }

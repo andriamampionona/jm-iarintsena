@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
+import ChurchFooter from '../ChurchFooter';
 
 export default function MinistriesPage() {
   const [activeCategory, setActiveCategory] = useState('all')
@@ -145,7 +146,7 @@ export default function MinistriesPage() {
             votre place et à servir selon vos capacités.
           </p>
           <p className="text-lg">
-            Que vous soyez passionné par l&apos;enseignement, la musique, le service ou la prière, 
+            Que vous soyez passionné par l&apos; enseignement, la musique, le service ou la prière, 
             il y a une place pour vous dans notre communauté.
           </p>
         </section>
@@ -319,7 +320,10 @@ export default function MinistriesPage() {
             </Link>
           </div>
         </section>
+
       </div>
+
+        <ChurchFooter/>
     </>
   );
 }
