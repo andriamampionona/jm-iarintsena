@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import ChurchFooter from '../ChurchFooter';
+import BibleVerse from '../parole-dieux';
 
 export default function NewTemplePage() {
   const [constructionProgress, setConstructionProgress] = useState(75);
@@ -18,25 +19,25 @@ export default function NewTemplePage() {
   const constructionImages = [
     {
       id: 1,
-      src: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      src: "/images/fondation-jmi.jpg",
       title: "Fondations du temple",
       date: "Janvier 2023"
     },
     {
       id: 2,
-      src: "https://images.unsplash.com/photo-1503387762353-8c6637f89308?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      src: "/images/chatier-jmi.jpg",
       title: "Structure principale",
       date: "Avril 2023"
     },
     {
       id: 3,
-      src: "https://images.unsplash.com/photo-1462826303086-329426d1aef5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      title: "Toiture en cours",
-      date: "Juillet 2023"
+      src: "/images/Auvant.jpg",
+      title: "Auvant en cours",
+      date: "Septembre 2024"
     },
     {
       id: 4,
-      src: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      src: "/images/jmi-in.jpg",
       title: "Aménagement intérieur",
       date: "Octobre 2023"
     }
@@ -105,41 +106,44 @@ export default function NewTemplePage() {
   // Données pour les besoins de financement
   const fundingNeeds = [
     {
-      item: "Bancs et sièges",
+      item: "Dallage",
+      cost: "15 000 €",
+      progress: 45,
+      description: "Revêtement de sol pour tout le temple"
+    },
+    {
+      item: "Lalotra",
+      cost: "8 500 €",
+      progress: 20,
+      description: "Toiture et couverture du bâtiment"
+    },
+    {
+      item: "Peinture",
+      cost: "6 200 €",
+      progress: 30,
+      description: "Peinture intérieure et extérieure"
+    },
+    {
+      item: "Bancs",
       cost: "12 000 €",
       progress: 65,
-      description: "Sièges confortables pour 300 personnes"
+      description: "Bancs pour 300 personnes"
     },
     {
-      item: "Système de sonorisation",
-      cost: "8 000 €",
-      progress: 40,
-      description: "Équipement audio professionnel"
-    },
-    {
-      item: "Éclairage",
-      cost: "5 000 €",
-      progress: 30,
-      description: "Système d'éclairage adapté au culte"
-    },
-    {
-      item: "Instruments de musique",
-      cost: "7 000 €",
-      progress: 20,
-      description: "Piano, batteries et instruments de louange"
+      item: "Clôturage",
+      cost: "9 800 €",
+      progress: 15,
+      description: "Clôture autour du terrain de l'église"
     }
   ];
 
   return (
     <>
-      <Head>
-        <title>Nouveau Temple - Jesosy Mamonjy Iarintsena</title>
-        <meta name="description" content="Suivez l&apos;avancement de la construction du nouveau temple de Jesosy Mamonjy Iarintsena et soutenez ce projet de foi." />
-      </Head>
+
 
       {/* Hero Section */}
       <div className="relative h-96 flex items-center justify-center bg-cover bg-center bg-fixed" 
-           style={{ backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1545235617-9465d2a55698?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')" }}>
+           style={{ backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('/images/fjm-iarintsena.jpg')" }}>
         <div className={`text-center text-white px-4 transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
           <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4">Nouveau Temple</h1>
           <p className="text-xl max-w-2xl mx-auto">Un projet de foi pour notre communauté</p>
@@ -182,7 +186,7 @@ export default function NewTemplePage() {
             <div className="md:w-1/2">
               <div className="rounded-xl overflow-hidden shadow-xl">
                 <img 
-                  src="https://images.unsplash.com/photo-16005861162f3a34d3b64d12738fcef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                  src="/images/chatier-jmi.jpg" 
                   alt="Vue architecturale du nouveau temple" 
                   className="w-full h-80 object-cover"
                 />
@@ -190,6 +194,78 @@ export default function NewTemplePage() {
             </div>
           </div>
         </section>
+
+        <section className="py-16 bg-white">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-serif font-bold text-green-800 mb-4">
+            Le Miracle d&apos;Iarintsena
+          </h2>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            L&apos;histoire extraordinaire de la construction de notre temple contre toute attente humaine
+          </p>
+        </div>
+        
+        <div className="max-w-4xl mx-auto bg-green-50 rounded-2xl p-8 md:p-12">
+          <div className="mb-8">
+            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg className="w-8 h-8 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <h3 className="text-xl font-serif text-green-800 text-center mb-4">La Prophétie</h3>
+            <p className="text-gray-700 text-center mb-6">
+              &quot;Lors de sa passation de service, notre pasteur a proclamé avec assurance divine : 
+              <span className="font-semibold"> &apos;Nous allons bâtir un temple à Iarintsena pour notre Dieu&apos;</span>, 
+              sans avoir aucun fond ni perspective humaine de réalisation.&quot;
+            </p>
+          </div>
+          
+          <div className="mb-8">
+            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg className="w-8 h-8 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+              </svg>
+            </div>
+            <h3 className="text-xl font-serif text-green-800 text-center mb-4">Le Défi</h3>
+            <p className="text-gray-700 text-center mb-6">
+              &quot;Avec une communauté majoritairement composée de cultivateurs aux ressources limitées, 
+              construire un temple de 30m × 12m en dur semblait totalement impossible 
+              selon les standards humains.&quot;
+            </p>
+          </div>
+          
+          <div>
+            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg className="w-8 h-8 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <h3 className="text-xl font-serif text-green-800 text-center mb-4">Le Miracle</h3>
+            <p className="text-gray-700 text-center">
+              &quot;Néanmoins, par la grâce de Dieu qui agit au-delà de nos limitations humaines, 
+              nous sommes actuellement sur la finition de ce temple qui témoigne de Sa grandeur 
+              et Sa fidélité envers ceux qui croient.&quot;
+            </p>
+          </div>
+        </div>
+        
+        <div className="text-center mt-12">
+          <p className="text-gray-600 mb-6">
+            Ce récit n&apos;est pas le fruit d&apos;un rêve humain, mais l&apos;accomplissement d&apos;une parole prophétique 
+            que Dieu a honorée par Sa puissance et Sa providence.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/testimonies" className="bg-green-700 hover:bg-green-800 text-white px-6 py-3 rounded-full font-semibold transition-colors duration-300">
+              Voir les témoignages
+            </a>
+            <a href="/gallery" className="border-2 border-green-700 text-green-700 hover:bg-green-50 px-6 py-3 rounded-full font-semibold transition-colors duration-300">
+              Galerie des travaux
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
 
         {/* Progress Section */}
         <section className="mb-16">
@@ -305,6 +381,8 @@ export default function NewTemplePage() {
           </div>
         </section>
 
+
+
         {/* Funding Needs Section */}
         <section className="mb-16">
           <h2 className="text-3xl md:text-4xl font-serif text-center text-green-800 mb-12">Besoins de Financement</h2>
@@ -329,6 +407,7 @@ export default function NewTemplePage() {
           </div>
         </section>
 
+        <BibleVerse />
         {/* Donation CTA Section */}
         <section className="bg-green-800 text-white p-10 rounded-lg text-center mb-16">
           <h2 className="text-3xl font-serif font-bold mb-4">Participez à ce Projet de Foi</h2>

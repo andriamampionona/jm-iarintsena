@@ -12,6 +12,53 @@ export default function ChurchAboutPage() {
     setIsVisible(true);
   }, []);
 
+    const [activeTab, setActiveTab] = useState('iarintsena');
+
+
+    // Données des églises dans l'ordre historique correct
+  const churches = [
+    {
+      id: 'ankorondrano',
+      name: 'Jesosy Mamonjy Ankorondrano',
+      location: 'Ankorondrano, Antananarivo, Madagascar',
+      image: '/images/JesosyMamonjyAnkorondrano_face.jpg',
+      description: 'Église mère fondatrice du réseau Jesosy Mamonjy. Officiellement établie en 1963 grâce au travail d\'évangélisation du missionnaire américain Mounir Aziz Daoud et de son épouse Jane Collins. Elle sert de siège social et de centre administratif pour tout le réseau.',
+      pastor: 'Pasteur Mounir Aziz Daoud (fondateur)',
+      founded: '1963',
+      isHeadquarters: true
+    },
+    {
+      id: 'fianarantsoa',
+      name: 'Jesosy Mamonjy Fianarantsoa',
+      location: 'Fianarantsoa, Madagascar',
+      image: '/images/fjm-fianarantsoa.jpg',
+      description: 'Deuxième église du réseau, établie à Fianarantsoa. Elle a joué un rôle crucial dans l\'expansion du mouvement vers le sud de Madagascar et continue de servir de centre régional important.',
+      pastor: 'Pasteur Jean-Claude Randriamampionona',
+      founded: '1972'
+    },
+    {
+      id: 'ambalavao',
+      name: 'Jesosy Mamonjy Ambalavao',
+      location: 'Ambalavao, Madagascar',
+      image: '/images/JesosyMamonjyAnkorondrano_face.jpg',
+      description: 'Troisième implantation du réseau, établie à Ambalavao. Cette église a été déterminante pour l\'évangélisation de la région Haute Matsiatra et a servi de base pour l\'expansion vers d\'autres localités.',
+      pastor: 'Pasteur Rakoto Andriamalala',
+      founded: '1985'
+    },
+    {
+      id: 'iarintsena',
+      name: 'Jesosy Mamonjy Iarintsena',
+      location: 'Iarintsena, Madagascar',
+      image: '/images/fjm-iarintsena.jpg',
+      description: 'Notre communauté, fille de l\'église d\'Ambalavao, établie en 2005. Nous construisons actuellement notre nouveau temple pour mieux servir notre région et participer à la mission d\'évangélisation.',
+      pastor: 'Pasteur Ratokimiarimanana Toky',
+      founded: '2005',
+      isCurrent: true
+    }
+  ];
+
+
+  
   // Données pour la ligne du temps
   const timelineData = [
     {
@@ -89,10 +136,6 @@ export default function ChurchAboutPage() {
 
   return (
     <>
-      <Head>
-        <title>À Propos - Jesosy Mamonjy Iarintsena</title>
-        <meta name="description" content="Découvrez l&apos;histoire, la vision et les valeurs de l&apos;église Jesosy Mamonjy Iarintsena." />
-      </Head>
 
       {/* Hero Section */}
       <div className="relative h-96 flex items-center justify-center bg-cover bg-center bg-fixed" 
@@ -117,7 +160,7 @@ export default function ChurchAboutPage() {
       {/* Main Content */}
       <div className="container mx-auto px-4 py-12">
         {/* Introduction Section */}
-        <section className="mb-16">
+        {/* <section className="mb-16">
           <div className="flex flex-col md:flex-row items-center gap-10">
             <div className="md:w-1/2">
               <h2 className="text-3xl md:text-4xl font-serif text-green-800 mb-6">Notre Histoire</h2>
@@ -145,8 +188,77 @@ export default function ChurchAboutPage() {
               </div>
             </div>
           </div>
+        </section> */}
+
+
+ {/* Navigation par onglets */}
+        <section className="mb-12">
+          <div className="flex overflow-x-auto border-b border-gray-200">
+            {churches.map(church => (
+              <button
+                key={church.id}
+                onClick={() => setActiveTab(church.id)}
+                className={`flex-shrink-0 px-6 py-4 font-medium text-lg ${activeTab === church.id ? 'border-b-2 border-green-700 text-green-700' : 'text-gray-500 hover:text-gray-700'}`}
+              >
+                {church.name}
+              </button>
+            ))}
+          </div>
         </section>
 
+        {/* Contenu des onglets */}
+        <section className="mb-16">
+          {churches.map(church => (
+            <div key={church.id} className={`${activeTab === church.id ? 'block' : 'hidden'}`}>
+              <div className="flex flex-col md:flex-row gap-8 items-start">
+                <div className="md:w-1/3">
+                  <div className="rounded-lg overflow-hidden shadow-lg">
+                    <Image
+                      src={church.image}
+                      alt={church.name}
+                      width={400}
+                      height={300}
+                      className="w-full h-64 object-cover"
+                    />
+                  </div>
+                </div>
+                
+                <div className="md:w-2/3">
+                  <h3 className="text-2xl font-serif text-green-800 mb-4">{church.name}</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                      <h4 className="font-semibold text-gray-700 mb-1">Localisation</h4>
+                      <p className="text-gray-600">{church.location}</p>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-700 mb-1">Pasteur</h4>
+                      <p className="text-gray-600">{church.pastor}</p>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-700 mb-1">Fondation</h4>
+                      <p className="text-gray-600">{church.founded}</p>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-700 mb-1">Statut</h4>
+                      <p className="text-gray-600">
+                        {church.isCurrent 
+                          ? 'Notre église' 
+                          : church.isHeadquarters 
+                            ? 'Siège social' 
+                            : church.id === 'ambalavao' 
+                              ? 'Église mère' 
+                              : 'Église sœur'}
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <p className="text-gray-700 mb-6">{church.description}</p>
+                  
+                </div>
+              </div>
+            </div>
+          ))}
+        </section>
         {/* Timeline Section */}
         <section className="mb-16">
           <h2 className="text-3xl md:text-4xl font-serif text-center text-green-800 mb-12">Notre Parcours</h2>

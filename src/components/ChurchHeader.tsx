@@ -15,13 +15,8 @@ export default function ChurchHeader() {
             {/* Logo et nom de l'église */}
             <div className="flex-shrink-0 flex items-center">
               <Link href="/" className="flex items-center space-x-2">
-                <div className="flex items-center justify-center w-10 h-10 bg-blue-600 rounded-md text-white">
-                  <span className="text-xl">✝</span>
-                </div>
-                <div className="hidden md:block">
-                  <h1 className="text-xl font-bold text-gray-900">Jesosy Mamonjy</h1>
-                  <p className="text-xs text-gray-600">Iarintsena</p>
-                </div>
+                <img src="/images/jm-logo.png" alt="logo" className='h-12 w-12 rounded-2xl' />
+  
               </Link>
             </div>
 
@@ -38,6 +33,8 @@ export default function ChurchHeader() {
               <Link href="/ministries" className="text-gray-700 hover:text-blue-600 transition-colors">Ministères</Link>
               <Link href="/events" className="text-gray-700 hover:text-blue-600 transition-colors">Événements</Link>
               <Link href="/blog" className="text-gray-700 hover:text-blue-600 transition-colors">Blog</Link>
+              <Link href="/visit" className="text-gray-700 hover:text-blue-600 transition-colors">Visite</Link>
+              <Link href="/gallery" className="text-gray-700 hover:text-blue-600 transition-colors">Gallery</Link>
               <Link href="/contact" className="text-gray-700 hover:text-blue-600 transition-colors">Contact</Link>
             </nav>
 

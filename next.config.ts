@@ -7,6 +7,12 @@ const nextConfig: NextConfig = {
     // domains: ['images.unsplash.com', 'example.com', 'another-domain.com'],
   },
   /* config options here */
+  remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "mg.wikipedia.org",
+      },
+    ],
 };
 
 export default nextConfig;

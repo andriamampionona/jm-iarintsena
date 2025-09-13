@@ -30,6 +30,7 @@ export default function ChurchContactPage() {
     console.log('Formulaire soumis:', formData);
     setIsSubmitted(true);
     
+    handleFormSubmit(formData.email, formData.subject, formData.message, formData.name)
     // Réinitialiser le formulaire après 3 secondes
     setTimeout(() => {
       setIsSubmitted(false);
@@ -42,12 +43,29 @@ export default function ChurchContactPage() {
     }, 3000);
   };
 
+
+    const handleFormSubmit = async (email: string,  subject: string,  message: string, name: string) => {
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST', // Assurez-vous que c'est bien un POST
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, name, subject, message }),
+      });
+  
+      if (response.ok) {
+        // console.log('Email sent successfully');
+      } else {
+        // console.error('Failed to send email');
+      }
+    } catch (error) {
+      // console.error('Error sending email:', error);
+    }
+  };
   return (
     <>
-      <Head>
-        <title>Contact - Jesosy Mamonjy Iarintsena</title>
-        <meta name="description" content="Contactez l'église Jesosy Mamonjy Iarintsena pour toute question, prière ou demande d'information." />
-      </Head>
+
 
       {/* Hero Section */}
       <div className="relative h-80 flex items-center justify-center bg-cover bg-center" 

@@ -65,7 +65,7 @@ export default function ChurchHomePage() {
             <div className="md:w-1/2">
               <div className="rounded-xl overflow-hidden shadow-xl">
                 <img 
-                  src="https://images.unsplash.com/photo-1509057594955-e1544182c640?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                  src="/images/fjm-iarintsena.jpg" 
                   alt="Communauté de l'église Jesosy Mamonjy" 
                   className="w-full h-80 object-cover"
                 />
@@ -143,7 +143,7 @@ export default function ChurchHomePage() {
               <div className="h-48 bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1563492065599-3520f775eeed?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')" }}></div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-3">Culte du Dimanche</h3>
-                <p className="text-gray-600 mb-4">Chaque dimanche à 10h, venez participer à notre culte hebdomadaire rempli de louanges et d&apos;enseignements bibliques.</p>
+                <p className="text-gray-600 mb-4">Chaque dimanche à 9h 30 minite, venez participer à notre culte hebdomadaire rempli de louanges et d&apos;enseignements bibliques.</p>
                 <Link href="/services" className="text-green-700 font-semibold hover:underline">
                   En savoir plus →
                 </Link>
