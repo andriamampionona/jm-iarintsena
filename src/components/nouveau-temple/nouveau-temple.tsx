@@ -167,13 +167,14 @@ export default function NewTemplePage() {
         <section className="mb-16">
           <div className="flex flex-col md:flex-row items-center gap-10">
             <div className="md:w-1/2">
-              <h2 className="text-3xl md:text-4xl font-serif text-green-800 mb-6">Un Rêve Devenu Réalité</h2>
+              <h2 className="text-3xl md:text-4xl font-serif text-green-800 mb-6">Notre Temple Devient Réalité</h2>
               <p className="text-lg mb-6">
-                Depuis plusieurs années, notre communauté rêvait d&apos;un lieu de culte plus spacieux et adapté 
-                à nos besoins croissants. Aujourd&apos;hui, grâce à la grâce de Dieu et à la générosité de nos membres, 
-                ce rêve devient réalité.
+                Ce n&apos;est pas un rêve, c&apos;est une promesse en voie d&apos;accomplissement
               </p>
-              <p className="text-lg mb-6">
+              <p className="text-lg font-semibold text-green-700 mb-6">
+                    Ce n&apos;est pas un rêve éloigné, mais une réalité en construction que nous pouvons toucher et voir grandir jour après jour.
+                </p>
+              <p className="text-lg mb-6 ">
                 Le nouveau temple de Jesosy Mamonjy n&apos;est pas simplement un bâtiment ; c&apos;est un outil pour 
                 accomplir la Grande Mission, un foyer pour la famille de Dieu, et un monument à la foi qui nous anime.
               </p>

@@ -140,7 +140,7 @@ export default function ChurchHomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-white rounded-xl overflow-hidden shadow-md transition-transform duration-300 hover:shadow-lg">
-              <div className="h-48 bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1563492065599-3520f775eeed?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')" }}></div>
+              <div className="h-48 bg-cover bg-center" style={{ backgroundImage: "url('/images/culte-dimanche.jpg')" }}></div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-3">Culte du Dimanche</h3>
                 <p className="text-gray-600 mb-4">Chaque dimanche à 9h 30 minite, venez participer à notre culte hebdomadaire rempli de louanges et d&apos;enseignements bibliques.</p>

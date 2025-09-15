@@ -15,8 +15,8 @@ export default function MinistriesPage() {
       title: "Ministère des Enfants",
       category: "age",
       description: "Un programme engageant pour les enfants de 3 à 12 ans pour apprendre la parole de Dieu de manière ludique et adaptée.",
-      image: "https://images.unsplash.com/photo-1534567153574-2b12153a89f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      meetingTime: "Dimanche à 10h",
+      image: "/images/culte-dimanche.jpg",
+      meetingTime: "Dimanche à 09h 30",
       leader: "Suzanne Rakoto",
       contact: "enfant@eglise-jmi.mg"
     },
@@ -25,31 +25,31 @@ export default function MinistriesPage() {
       title: "Ministère des Jeunes",
       category: "age",
       description: "Une communauté dynamique pour les 13-25 ans qui cherchent à grandir dans leur foi et à se connecter avec d'autres croyants.",
-      image: "https://images.unsplash.com/photo-1549056572-75914d6d7e1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: "/images/ministere-jeune.png",
       meetingTime: "Vendredi à 18h",
       leader: "Thomas Andria",
       contact: "jeunes@eglise-jmi.mg"
     },
-    {
-      id: 3,
-      title: "Ministère des Femmes",
-      category: "group",
-      description: "Un espace d'échange, de soutien et d'édification pour les femmes de tous âges de notre communauté.",
-      image: "https://images.unsplash.com/photo-1545235617-9465d2a55698?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      meetingTime: "Samedi à 14h (bi-mensuel)",
-      leader: "Marie-Louise Randria",
-      contact: "femmes@eglise-jmi.mg"
-    },
-    {
-      id: 4,
-      title: "Groupe de Louange",
-      category: "worship",
-      description: "Notre équipe de louange qui guide la congrégation dans l'adoration à travers la musique et le chant.",
-      image: "https://images.unsplash.com/photo-1509807995916-c332365e2d9e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      meetingTime: "Jeudi à 17h",
-      leader: "David Ralison",
-      contact: "louange@eglise-jmi.mg"
-    },
+    // {
+    //   id: 3,
+    //   title: "Ministère des Femmes",
+    //   category: "group",
+    //   description: "Un espace d'échange, de soutien et d'édification pour les femmes de tous âges de notre communauté.",
+    //   image: "https://images.unsplash.com/photo-1545235617-9465d2a55698?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    //   meetingTime: "Samedi à 14h (bi-mensuel)",
+    //   leader: "Marie-Louise Randria",
+    //   contact: "femmes@eglise-jmi.mg"
+    // },
+    // {
+    //   id: 4,
+    //   title: "Groupe de Louange",
+    //   category: "worship",
+    //   description: "Notre équipe de louange qui guide la congrégation dans l'adoration à travers la musique et le chant.",
+    //   image: "https://images.unsplash.com/photo-1509807995916-c332365e2d9e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    //   meetingTime: "Jeudi à 17h",
+    //   leader: "David Ralison",
+    //   contact: "louange@eglise-jmi.mg"
+    // },
     {
       id: 5,
       title: "Étude Biblique",
@@ -60,36 +60,27 @@ export default function MinistriesPage() {
       leader: "Pasteur Jean Rakoto",
       contact: "etude-biblique@eglise-jmi.mg"
     },
-    {
-      id: 6,
-      title: "Ministère d'Entraide",
-      category: "service",
-      description: "Une équipe dévouée qui apporte soutien et assistance aux membres de la communauté dans le besoin.",
-      image: "https://images.unsplash.com/photo-1582212179270-1b2b5c2e15b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      meetingTime: "Sur rendez-vous",
-      leader: "Joséphine Rasoa",
-      contact: "entraide@eglise-jmi.mg"
-    },
+    
     {
       id: 7,
-      title: "Groupe de Prière",
+      title: "Nuit de Prière",
       category: "prayer",
-      description: "Rencontres régulières pour prier ensemble pour les besoins de l'église, de la communauté et du monde.",
+      description: " Soirée spéciale consacrée à la prière et à l’intercession, où l’église serassemble pour chercher la présence de Dieu et intercéder pour la communauté, la nation et le monde.",
       image: "https://images.unsplash.com/photo-1438232992991-995b7058bbb3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      meetingTime: "Lundi et Mercredi à 17h",
-      leader: "Pierre Rafidy",
-      contact: "priere@eglise-jmi.mg"
+      meetingTime: "Jeudi 19h",
+      leader: "Pasteur Toky",
+      contact: "danielnomenjanahry44@gmail.com"
     },
-    {
-      id: 8,
-      title: "Ministère des Couples",
-      category: "group",
-      description: "Un espace pour les couples qui cherchent à renforcer leur relation à travers les principes bibliques.",
-      image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      meetingTime: "Dimanche à 15h (mensuel)",
-      leader: "Paul et Sarah Ranaivo",
-      contact: "couples@eglise-jmi.mg"
-    }
+    // {
+    //   id: 8,
+    //   title: "Ministère des Couples",
+    //   category: "group",
+    //   description: "Un espace pour les couples qui cherchent à renforcer leur relation à travers les principes bibliques.",
+    //   image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    //   meetingTime: "Dimanche à 15h (mensuel)",
+    //   leader: "Paul et Sarah Ranaivo",
+    //   contact: "couples@eglise-jmi.mg"
+    // }
   ];
 
 
@@ -110,10 +101,7 @@ export default function MinistriesPage() {
 
   return (
     <>
-      <Head>
-        <title>Ministères - Jesosy Mamonjy Iarintsena</title>
-        <meta name="description" content="Découvrez les différents ministères de l&apos;église Jesosy Mamonjy Iarintsena et trouvez votre place dans notre communauté." />
-      </Head>
+
 
       {/* Hero Section */}
       <div className="relative h-80 flex items-center justify-center bg-cover bg-center" 

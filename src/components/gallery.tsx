@@ -10,20 +10,14 @@ import 'swiper/css/pagination';
 
 export default function GalleryPage() {
   const [activeCategory, setActiveCategory] = useState('all');
-  const [selectedImage, setSelectedImage] = useState({
-    id: '',
-    src: '',
-    alt: '',
-    title: '',
-    date: '',
-    description: ''
-  });
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [selectedImage, setSelectedImage] = useState<any>();
 
   // Données des images de construction
   const constructionImages = [
     {
       id: 1,
-      src: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      src: "/images/fondation-jmi.jpg",
       alt: "Début des travaux de fondation",
       category: "foundation",
       title: "Début des travaux",
@@ -32,7 +26,7 @@ export default function GalleryPage() {
     },
     {
       id: 2,
-      src: "https://images.unsplash.com/photo-1503387762353-8c6637f89308?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      src: "/images/jmi-house.jpg",
       alt: "Travaux de maçonnerie",
       category: "construction",
       title: "Élévation des murs",
@@ -41,12 +35,12 @@ export default function GalleryPage() {
     },
     {
       id: 3,
-      src: "https://images.unsplash.com/photo-1541979667479-339a9c826ab4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      alt: "Toiture en cours",
-      category: "roof",
-      title: "Pose de la toiture",
-      date: "Juillet 2023",
-      description: "Installation de la charpente et de la couverture"
+      src: "/images/chatier2.jpg",
+      alt: "Auvant en cours",
+      category: "auvant",
+      title: "Pose de l' auvant",
+      date: "Septembre 2025",
+      description: "Installation des chafodage"
     },
     {
       id: 4,
@@ -54,27 +48,27 @@ export default function GalleryPage() {
       alt: "Travaux de finition",
       category: "finishing",
       title: "Finition intérieure",
-      date: "Octobre 2023",
+      date: "Octobre 2025",
       description: "Travaux de plâtrerie et préparation des surfaces"
     },
     {
       id: 5,
-      src: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      src: "/images/jmi-in.jpg",
       alt: "Pose des bancs",
       category: "interior",
       title: "Aménagement intérieur",
-      date: "Décembre 2023",
+      date: "Décembre 2025",
       description: "Installation des bancs et mobilier liturgique"
     },
-    {
-      id: 6,
-      src: "https://images.unsplash.com/photo-1590086782957-93c06ef21604?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      alt: "Extérieur du temple",
-      category: "exterior",
-      title: "Façade complétée",
-      date: "Février 2024",
-      description: "Vue extérieure du temple presque terminé"
-    }
+    // {
+    //   id: 6,
+    //   src: "https://images.unsplash.com/photo-1590086782957-93c06ef21604?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    //   alt: "Extérieur du temple",
+    //   category: "exterior",
+    //   title: "Façade complétée",
+    //   date: "Février 2024",
+    //   description: "Vue extérieure du temple presque terminé"
+    // }
   ];
 
   // Témoignages
@@ -161,14 +155,7 @@ export default function GalleryPage() {
             <div 
               key={image.id} 
               className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer transform transition-transform duration-300 hover:scale-105"
-              onClick={() => setSelectedImage({
-                id: "bdvsqdvqjsvd" + image?.id || "dsfdfsdfsd",
-                src: image.src,
-                alt: image.alt,
-                title: image.title,
-                date: image.date,
-                description: image.description
-              })}
+              onClick={() => setSelectedImage(image)}
             >
               <div className="relative h-64">
                 <Image
@@ -191,14 +178,7 @@ export default function GalleryPage() {
         {selectedImage && (
           <div 
             className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4"
-            onClick={() => setSelectedImage({
-                id: "",
-                src: '',
-                alt: '',
-                title: '',
-                date: '',
-                description: ''
-            })}
+            onClick={() => setSelectedImage(null)}
           >
             <div className="max-w-4xl max-h-full overflow-auto">
               <div className="relative bg-white rounded-lg overflow-hidden">
@@ -213,19 +193,10 @@ export default function GalleryPage() {
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-green-800">{selectedImage.title}</h3>
                   <p className="text-gray-500">{selectedImage.date}</p>
-                  <p className="text-gray-700 mt-2">{selectedImage.description}</p>
+                  <p className="text-gray-700 mt-2">{selectedImage.description }</p>
                   <button
                     className="absolute top-4 right-4 bg-black bg-opacity-50 text-white rounded-full p-2"
-                    onClick={() => setSelectedImage(
-                        {
-                            id: "",
-                            src: '',
-                            alt: '',
-                            title: '',
-                            date: '',
-                            description: ''
-                        }
-                    )}
+                    onClick={() => setSelectedImage(null)}
                   >
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />

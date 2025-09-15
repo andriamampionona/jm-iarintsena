@@ -52,7 +52,7 @@ export default function BlogPage() {
       author: "Pasteur Jean Rakoto",
       date: "2023-10-28",
       readTime: "6 min",
-      image: "https://images.unsplash.com/photo-1503387762353-8c6637f89308?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: "/images/chatier2.jpg"
     },
     {
       id: 5,
@@ -152,7 +152,7 @@ export default function BlogPage() {
 
       {/* Hero Section */}
       <div className="relative h-80 flex items-center justify-center bg-cover bg-center" 
-           style={{ backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1496024840928-4c417adf211d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')" }}>
+           style={{ backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')" }}>
         <div className="text-center text-white px-4">
           <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4">Blog</h1>
           <p className="text-xl max-w-2xl mx-auto">Articles édifiants, témoignages et ressources pour nourrir votre foi</p>

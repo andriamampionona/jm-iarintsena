@@ -12,6 +12,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/thumbs';
 import 'swiper/css/free-mode';
+import FormulaireVisite from './visit-form';
 
 export default function SiteVisitPage() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
@@ -42,7 +43,7 @@ export default function SiteVisitPage() {
     },
     {
       id: 4,
-      src: 'https://images.unsplash.com/photo-1503387762353-8c6637f89308?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      src: '/images/jmi-in.jpg',
       title: 'Pose de la Charpente',
       date: 'Octobre 2023',
       category: 'roof'
@@ -56,23 +57,23 @@ export default function SiteVisitPage() {
     },
     {
       id: 6,
-      src: 'https://images.unsplash.com/photo-1581539250439-c96689b516dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      src: '/images/jmi-in.jpg',
       title: 'Vue Intérieure',
-      date: 'Février 2024',
+      date: 'Février 2025',
       category: 'interior'
     },
     {
       id: 7,
       src: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       title: 'Travaux de Toiture',
-      date: 'Avril 2024',
+      date: 'Avril 2025',
       category: 'roof'
     },
     {
       id: 8,
-      src: 'https://images.unsplash.com/photo-1503387762353-8c6637f89308?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      src: '/images/jmi-house.jpg',
       title: 'État Actuel du Chantier',
-      date: 'Juin 2024',
+      date: 'Juin 2025',
       category: 'construction'
     }
   ];
@@ -93,20 +94,37 @@ export default function SiteVisitPage() {
 
   // Informations de visite
   const visitInfo = {
-    address: "Lieu-dit Iarintsena, Route d'Antananarivo, Madagascar",
+    address: "Lieu-dit Iarintsena, Ambalavao, RN7, Madagascar",
     hours: "Lundi au Samedi: 8h00 - 17h00",
-    contact: "+261 34 12 345 67",
-    email: "contact@jesosymamonjy-iarintsena.mg",
+    contact: "+261 38 95 207 79",
+    email: "danielnomenjanahary44@gmail.com",
     instructions: "Pour des raisons de sécurité, les visites doivent être organisées à l'avance. Merci de nous contacter pour planifier votre visite."
+  };
+
+   const handleVisiteSubmit = async (data: unknown) => {
+
+
+     try {
+      const res = await fetch("/api/visit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+
+      return res.ok; // renvoie true si 200-299
+    } catch {
+      return false;
+    }
+    
+    
+
+
   };
 
   
   return (
     <>
-      <Head>
-        <title>Visite du Chantier - Jesosy Mamonjy Iarintsena</title>
-        <meta name="description" content="Découvrez l'avancement de la construction de notre nouveau temple à travers notre galerie photos et planifiez votre visite." />
-      </Head>
+    
 
       {/* Hero Section */}
       <div className="relative h-96 flex items-center justify-center bg-cover bg-center" 
@@ -245,69 +263,7 @@ export default function SiteVisitPage() {
               </div>
             </div>
 
-            <div>
-              <h2 className="text-2xl font-serif text-green-800 mb-6">Formulaire de Visite</h2>
-              
-              <div className="bg-white rounded-lg shadow-md p-6">
-                <form className="space-y-4">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Nom complet</label>
-                    <input
-                      type="text"
-                      id="name"
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-green-500 focus:border-green-500"
-                      placeholder="Votre nom"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                    <input
-                      type="email"
-                      id="email"
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-green-500 focus:border-green-500"
-                      placeholder="votre@email.com"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Téléphone</label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-green-500 focus:border-green-500"
-                      placeholder="+261 34 12 345 67"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="date" className="block text-sm font-medium text-gray-700 mb-1">Date souhaitée</label>
-                    <input
-                      type="date"
-                      id="date"
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-green-500 focus:border-green-500"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Message (optionnel)</label>
-                    <textarea
-                      id="message"
-                      rows={4}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-green-500 focus:border-green-500"
-                      placeholder="Informations supplémentaires..."
-                    ></textarea>
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="w-full bg-green-700 hover:bg-green-800 text-white py-3 px-4 rounded-md transition-colors duration-300"
-                  >
-                    Demander une visite
-                  </button>
-                </form>
-              </div>
-            </div>
+            <FormulaireVisite  onSubmit={handleVisiteSubmit }></FormulaireVisite>
           </div>
         </section>
 
@@ -318,16 +274,15 @@ export default function SiteVisitPage() {
           <div className="bg-white rounded-lg shadow-md overflow-hidden">
             <div className="h-96 w-full relative">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3810.755996572882!2d47.51631431540208!3d-18.91489099100024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x21f07ddf2d2f3b3f%3A0xcd0e2e3d68f47f2f!2sAntananarivo%2C%20Madagascar!5e0!3m2!1sen!2sus!4v1633456789012!5m2!1sen!2sus"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15933.512309782644!2d47.4705!3d-19.8740!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x21f07b6c8a3e0a5f%3A0x123456789abcdef!2sIarintsena%2C%20Madagascar!5e0!3m2!1sfr!2smg!4v1726420500000!5m2!1sfr!2smg"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
-                // allowFullScreen=""
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
             </div>
-            
+
             <div className="p-6">
               <div className="flex items-center justify-between">
                 <div>
@@ -335,7 +290,7 @@ export default function SiteVisitPage() {
                   <p className="text-gray-600">{visitInfo.address}</p>
                 </div>
                 <a
-                  href="https://goo.gl/maps/example"
+                  href="https://www.google.com/maps/dir/?api=1&destination=Iarintsena%2C+Madagascar"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-green-700 hover:bg-green-800 text-white px-4 py-2 rounded-md transition-colors duration-300"
@@ -345,6 +300,7 @@ export default function SiteVisitPage() {
               </div>
             </div>
           </div>
+
         </section>
 
         {/* Prochaines Étapes */}

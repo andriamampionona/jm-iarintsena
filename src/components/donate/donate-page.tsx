@@ -243,17 +243,23 @@ export default function DonatePage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="border border-gray-200 rounded-lg p-4">
                   <h4 className="font-semibold mb-2">Transfert Mobile Money</h4>
-                  <p className="text-gray-600 mb-2">MVola: <span className="font-mono">034 12 345 67</span></p>
-                  <p className="text-gray-600">Airtel Money: <span className="font-mono">033 12 345 67</span></p>
+                  <p className="text-gray-600 mb-2">MVola: <span className="font-mono">+261 38 95 207 79</span></p>
+                  <p className="text-gray-600">Airtel Money: <span className="font-mono">...</span></p>
                 </div>
-                
                 <div className="border border-gray-200 rounded-lg p-4">
                   <h4 className="font-semibold mb-2">Virement Bancaire</h4>
-                  <p className="text-gray-600 mb-2">Bank of Madagascar</p>
-                  <p className="text-gray-600 mb-2">N° de compte: <span className="font-mono">12345 67890 12345</span></p>
-                  <p className="text-gray-600">Code Swift: <span className="font-mono">BOMGMGMG</span></p>
+                  <p className="text-gray-600 mb-2">BNI</p>
+                  
+
+                  <a
+                    href="/documents/rib-jm-iarintsena.pdf"
+                    download
+                    className="inline-block px-4 py-2 bg-green-700 text-white rounded hover:bg-green-800 transition"
+                  >
+                    Télécharger le RIB
+                  </a>
                 </div>
-                
+
                 <div className="border border-gray-200 rounded-lg p-4">
                   <h4 className="font-semibold mb-2">Don en main propre</h4>
                   <p className="text-gray-600">Vous pouvez déposer votre don directement au secrétariat de l&apos;église aux heures d&apos;ouverture.</p>
@@ -337,7 +343,7 @@ export default function DonatePage() {
         </div>
         
         {/* Témoignages */}
-        <div className="mt-16">
+        {/* <div className="mt-16">
           <h2 className="text-3xl font-serif text-center text-green-800 mb-12">Témoignages de Donateurs</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -386,7 +392,7 @@ export default function DonatePage() {
               </p>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
       
         <ChurchFooter/>

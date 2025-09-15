@@ -23,17 +23,17 @@ export default function ChurchAboutPage() {
       location: 'Ankorondrano, Antananarivo, Madagascar',
       image: '/images/JesosyMamonjyAnkorondrano_face.jpg',
       description: 'Église mère fondatrice du réseau Jesosy Mamonjy. Officiellement établie en 1963 grâce au travail d\'évangélisation du missionnaire américain Mounir Aziz Daoud et de son épouse Jane Collins. Elle sert de siège social et de centre administratif pour tout le réseau.',
-      pastor: 'Pasteur Mounir Aziz Daoud (fondateur)',
+      pastor: 'Pasteur RANDRIANATOANDRO Raymond',
       founded: '1963',
       isHeadquarters: true
     },
     {
       id: 'fianarantsoa',
       name: 'Jesosy Mamonjy Fianarantsoa',
-      location: 'Fianarantsoa, Madagascar',
-      image: '/images/fjm-fianarantsoa.jpg',
+      location: 'Antsororokavo Fianarantsoa, Madagascar',
+      image: '/images/jm-antsororkavo.jpg',
       description: 'Deuxième église du réseau, établie à Fianarantsoa. Elle a joué un rôle crucial dans l\'expansion du mouvement vers le sud de Madagascar et continue de servir de centre régional important.',
-      pastor: 'Pasteur Jean-Claude Randriamampionona',
+      pastor: 'Pasteur RAKOTONDRAVELO Justin',
       founded: '1972'
     },
     {
@@ -42,7 +42,7 @@ export default function ChurchAboutPage() {
       location: 'Ambalavao, Madagascar',
       image: '/images/JesosyMamonjyAnkorondrano_face.jpg',
       description: 'Troisième implantation du réseau, établie à Ambalavao. Cette église a été déterminante pour l\'évangélisation de la région Haute Matsiatra et a servi de base pour l\'expansion vers d\'autres localités.',
-      pastor: 'Pasteur Rakoto Andriamalala',
+      pastor: 'Pasteur Michelle',
       founded: '1985'
     },
     {
